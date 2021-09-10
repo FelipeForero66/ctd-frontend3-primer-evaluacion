@@ -4,26 +4,27 @@ class Selection extends React.Component {
     render() {
         return (
             <div>
-                {this.props.optionLetters.map((allTextList) => (
-                    <button
-                        key={`allTextList_${allTextList.id}`}
-                        onClick={() => {
-                            this.props.onSelectLetter(allTextList.id);
-                        }}
-                    >
-                        A
-                    </button>
-                ))}
-                {this.props.optionLetters.map((allTextList) => (
-                    <button
-                        key={`allTextList_${allTextList.id}`}
-                        onClick={() => {
-                            this.props.onSelectLetter(allTextList.id);
-                        }}
-                    >
-                        B
-                    </button>
-                ))}
+
+                <button
+                    
+                    onClick={() => {
+                        this.props.onSelectLetter(this.props.optionLetters[this.props.onIndex+1].id,"a");
+                    }}
+                >
+                    A
+                </button>
+                <p>{this.props.optionA}</p>
+
+                <button
+
+                    onClick={() => {
+                        this.props.onSelectLetter(this.props.optionLetters[this.props.onIndex+1].id, "b");
+                    }}
+                >
+                    B
+                </button>
+                   <p>{this.props.optionB}</p>
+
             </div>
         );
     }
