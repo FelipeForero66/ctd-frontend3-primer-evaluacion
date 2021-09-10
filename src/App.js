@@ -59,14 +59,23 @@ class App extends React.Component {
   render() {
     console.log("currentQuestion", this.state.currentQuestion);
     return (
-      <div className="App">
+      <div className="App layout">
         {this.state.loading ? (
           <div>loading...</div>
         ) : (
           <>
             <Text allTextList = {this.state.currentQuestion}/>
-            <Selection optionLetters = {this.state.allTextList} onSelectLetter = {this.handlerSelectLetter} onIndex = {this.state.index} optionA = {this.state.optionA} optionB = {this.state.optionB}/>
-            <Records currentLetterSelection = {this.state.currentLetterSelection} recordLetterSelection ={this.state.recordLetterSelection } />
+            <Selection 
+            optionLetters = {this.state.allTextList} 
+            onSelectLetter = {this.handlerSelectLetter} 
+            onIndex = {this.state.index} 
+            optionA = {this.state.optionA} 
+            optionB = {this.state.optionB}
+            />
+            <Records 
+            currentLetterSelection = {this.state.currentLetterSelection} 
+            recordLetterSelection = {this.state.recordLetterSelection } 
+            />
           </>
         )}
       </div>
